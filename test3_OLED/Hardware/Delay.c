@@ -25,7 +25,7 @@ void Delay_us(volatile uint32_t us)
  * @param xus 延时时长，单位：微秒（最大值根据时钟而定）
  */
 void Delay_us(uint32_t xus)
-{
+{   // 先加入一个us,后面的都是跟随而改
     // 假设 SystemCoreClock 已经定义，并等于 CPU 主频（例如 48MHz）
     uint32_t ticks = (SystemClock / 1000000) * xus;
 
